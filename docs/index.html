@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Çopur (@COPUR) — Enterprise Software &amp; Product Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121933;
+      --border: #232d54;
+      --text: #e6ebf5;
+      --muted: #9aa7c7;
+      --accent: #5b8cff;
+      --accent-soft: rgba(91, 140, 255, 0.12);
+      --green: #3ddc97;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.25rem;
+    }
+    .container { max-width: 1080px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(91, 140, 255, 0.35);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+    }
+    h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; max-width: 780px; }
+    .links { margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .links a:hover { border-color: var(--accent); }
+    h2 { font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; color: #fff; }
+    .target { font-size: 0.82rem; color: var(--green); margin-bottom: 0.75rem; font-weight: 500; }
+    .card p { color: var(--muted); font-size: 0.93rem; margin-bottom: 1rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+    .tag {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+    .repos { font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .repos a { color: var(--accent); text-decoration: none; margin-right: 0.65rem; display: inline-block; }
+    .repos a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Enterprise Software Architect · 16+ Years</span>
+      <h1>Ali Çopur (@COPUR)</h1>
+      <p class="subtitle">
+        Enterprise-grade software products and platforms across Regulated Banking &amp; Open Finance,
+        Business Process Orchestration (Camunda 8.10), EV Roaming &amp; Mobility, and On-Premise AI Governance.
+      </p>
+      <div class="links">
+        <a href="https://github.com/COPUR">GitHub Profile</a>
+        <a href="https://github.com/COPUR/COPUR/blob/main/PROJECTS.md">Full Product Catalog</a>
+      </div>
+    </header>
+
+    <h2>Enterprise Product Suites</h2>
+    <div class="grid">
+      <article class="card">
+        <div>
+          <h3>Instant Payment Exception &amp; BPO Orchestrator</h3>
+          <div class="target">Tier-1 Banks · PSPs · TR BKM FAST Operations</div>
+          <p>
+            Turnkey Camunda 8.10 orchestration for instant payment exceptions with PII-free workflow state,
+            idempotent ledger capture, per-provider OIDC audience isolation, and one-command Kubernetes deployment.
+          </p>
+          <div class="tags">
+            <span class="tag">Camunda 8.10</span><span class="tag">Java 23</span><span class="tag">Keycloak OIDC</span><span class="tag">Kubernetes</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/demo-camunda-k8s">demo-camunda-k8s</a>
+          <a href="https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration">neo-fintechbankx-bpo</a>
+          <a href="https://github.com/COPUR/camunda8-banking-poc">camunda8-banking-poc</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>FinTechBankX Core Banking &amp; Open Finance</h3>
+          <div class="target">Retail &amp; Corporate Banks · Open Finance Platforms</div>
+          <p>
+            Domain-driven lending, payment orchestration, KYC, and Open Finance platform backed by
+            Terraform IaC, Service Mesh security, Kafka event streaming, and OpenAPI/AsyncAPI catalogs.
+          </p>
+          <div class="tags">
+            <span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Terraform</span><span class="tag">Service Mesh</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/OPF-Agentive-Platform">OPF-Agentive-Platform</a>
+          <a href="https://github.com/COPUR/fintechbankx-customer-profile-kyc-core">kyc-core</a>
+          <a href="https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap">iam-keycloak</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>EV PnC Consent Governance Platform</h3>
+          <div class="target">CPOs · eMSPs · EV Roaming Hubs</div>
+          <p>
+            Contract-first Plug &amp; Charge roaming consent registry with single-source OpenAPI/AsyncAPI/JSON Schema
+            contracts, consumer-driven tests, OCPI adapters, and revocation propagation workers.
+          </p>
+          <div class="tags">
+            <span class="tag">OpenAPI / AsyncAPI</span><span class="tag">OCPI</span><span class="tag">Modular Monolith</span><span class="tag">Contract Tests</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/EV_PnC_Consent_contracts">contracts</a>
+          <a href="https://github.com/COPUR/EV_PnC_Consent_registry">registry</a>
+          <a href="https://github.com/COPUR/EV_PNC_hub-gateway">hub-gateway</a>
+          <a href="https://github.com/COPUR/EV_PNC_simulator">simulator</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Jeff — Self-Hosted AI Tool-Call Firewall</h3>
+          <div class="target">Regulated Engineering Teams · Air-Gapped AI</div>
+          <p>
+            On-premise decision layer implementing TypeSafe's jev System One API with GLiFormer (400M) and
+            local Qwen escalation to gate AI coding-agent tool calls with zero external data egress.
+          </p>
+          <div class="tags">
+            <span class="tag">GLiFormer 400M</span><span class="tag">Local Qwen</span><span class="tag">Python</span><span class="tag">Zero-Egress</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/jeff">jeff</a>
+          <a href="https://github.com/COPUR/ai-governance-framework">ai-governance-framework</a>
+          <a href="https://github.com/COPUR/architecture-as-code">architecture-as-code</a>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      Maintained via automated contract &amp; secret-hygiene verification · @COPUR
+    </footer>
+  </div>
+</body>
+</html>

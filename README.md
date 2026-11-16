@@ -16,35 +16,32 @@ An end-to-end, domain-driven banking and process orchestration product family de
 - **Instant Payment Exception & BPO Orchestrator**
   - **Product Value:** Automates mission-critical payment exception lifecycles (e.g., TR BKM FAST `pay-instant-exception`) with deterministic state transitions, human-in-the-loop escalation (Operate/Tasklist), and zero PII leakage into workflow state.
   - **Enterprise Controls:** Runtime output guardrails (`OutputVariables`) blocking monetary/PII fields from process engines, idempotent ledger capture (`x-idempotency-key`), per-provider OIDC audience isolation via Keycloak, and one-command Kubernetes/Helm deployment.
-  - **Repositories:** [`demo-camunda-k8s`](https://github.com/COPUR/demo-camunda-k8s) · [`neo-fintechbankx-bpo-process-orchestration`](https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration)
+  - **Public Repositories:** [`demo-camunda-k8s`](https://github.com/COPUR/demo-camunda-k8s) · [`neo-fintechbankx-bpo-process-orchestration`](https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration) · [`camunda8-banking-poc`](https://github.com/COPUR/camunda8-banking-poc)
 
 - **Enterprise Lending, Payments & Open Finance Platform**
-  - **Product Value:** Modular banking core covering loan lifecycle management, payment orchestration (initiation, settlement, request-to-pay, recurring mandates, bulk), KYC/risk decisioning, compliance evidence, and Open Finance consent/data APIs.
-  - **Enterprise Controls:** Multi-wave microservices governance backed by centralized OpenAPI, AsyncAPI, and JSON Schema catalogs, Terraform IaC modules, Service Mesh security, Kafka event streaming, and SRE observability.
-  - **Repositories:** [`enterprise-loan-management-system`](https://github.com/COPUR/enterprise-loan-management-system) · [`enhanced-loan-management`](https://github.com/COPUR/enhanced-loan-management) · [`LoanPayment_POC`](https://github.com/COPUR/LoanPayment_POC) · [`orangeTeamPOC`](https://github.com/COPUR/orangeTeamPOC) · [`banking-transformation-report`](https://github.com/COPUR/banking-transformation-report)
+  - **Product Value:** Modular banking core covering loan lifecycle management, payment orchestration, KYC/customer profile, and Open Finance APIs.
+  - **Enterprise Controls:** Multi-wave microservices governance backed by IAM (Keycloak/LDAP), Terraform IaC modules, CI/CD templates, Service Mesh security, Kafka event streaming, and centralized OpenAPI/AsyncAPI/JSON Schema catalogs.
+  - **Public Platform Modules:** [`OPF-Agentive-Platform`](https://github.com/COPUR/OPF-Agentive-Platform) · [`fintechbankx-customer-profile-kyc-core`](https://github.com/COPUR/fintechbankx-customer-profile-kyc-core) · [`fintechbankx-platform-identity-iam-keycloak-ldap`](https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap) · [`fintechbankx-platform-mesh-security-service-mesh`](https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh) · [`fintechbankx-platform-event-streaming-kafka`](https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka) · [`fintechbankx-platform-delivery-iac-terraform-modules`](https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules) *(Core lending authority & compliance modules maintained in private enterprise repositories)*
 
 - **MasruFi — Sharia-Compliant Digital Finance Engine**
-  - **Product Value:** Production-oriented domain engine implementing Islamic finance instruments (Istisna, Ijarah, Qard Hassan) alongside crypto-banking primitives.
-  - **Enterprise Controls:** Strict Domain-Driven Design (DDD) and Hexagonal Architecture isolating financial rules from transport and persistence layers.
-  - **Repository:** [`MasruFi_Framework`](https://github.com/COPUR/MasruFi_Framework)
+  - **Product Value:** Production-oriented domain engine implementing Islamic finance instruments (Istisna, Ijarah, Qard Hassan) alongside crypto-banking primitives using strict DDD and Hexagonal Architecture.
 
 ---
 
 ### 2. EV Mobility — Plug & Charge Consent & Telemetry Product Suite
 *Target: Charge Point Operators (CPOs), eMSPs, Automotive & EV Ecosystem Platforms*
 
-A contract-first mobility platform enabling compliant EV roaming consent management, driver inspection workflows, and safe vehicle telemetry engineering.
+A contract-first mobility platform enabling compliant EV roaming consent management, OCPI integration, telemetry, and safe vehicle diagnostics engineering.
 
-- **EV PnC Consent Governance Platform**
-  - **Product Value:** Neutral, centralized Plug & Charge (PnC) roaming consent registry managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, and multi-tenancy—paired with asynchronous revocation propagation workers.
+- **EV PnC Consent & Roaming Governance Platform**
+  - **Product Value:** Neutral, centralized Plug & Charge (PnC) roaming consent registry managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, and multi-tenancy—paired with OCPI eMSP adapters, hub gateway, telemetry, simulator, and revocation propagation workers.
   - **Enterprise Controls:** Dedicated contracts repository as the single source of truth (OpenAPI, AsyncAPI, JSON Schema), automated SDK generation, and consumer-driven contract verification.
-  - **Repositories:** [`EV_PnC_Consent_contracts`](https://github.com/COPUR/EV_PnC_Consent_contracts) · [`EV_PnC_Consent_registry`](https://github.com/COPUR/EV_PnC_Consent_registry)
+  - **Public Repositories:** [`EV_PnC_Consent_contracts`](https://github.com/COPUR/EV_PnC_Consent_contracts) · [`EV_PnC_Consent_registry`](https://github.com/COPUR/EV_PnC_Consent_registry) · [`EV_PnC_Consent_decision`](https://github.com/COPUR/EV_PnC_Consent_decision) · [`EV_PnC_Consent_testkit`](https://github.com/COPUR/EV_PnC_Consent_testkit) · [`EV_PNC_hub-gateway`](https://github.com/COPUR/EV_PNC_hub-gateway) · [`EV_PNC_ocpi-emsp`](https://github.com/COPUR/EV_PNC_ocpi-emsp) · [`EV_PNC_telemetry`](https://github.com/COPUR/EV_PNC_telemetry) · [`EV_PNC_simulator`](https://github.com/COPUR/EV_PNC_simulator)
 
 - **Driver Experience & Automotive Verification Products**
-  - **PreFlight PDI:** Cross-platform (iOS & Android) delivery inspection product guiding EV owners through structured pre-delivery verification.
-  - **Tesla CAN Explorer (Bench Edition):** Controlled, offline CAN bus simulator, replay tool, and TDD rewrite engine for safe automotive diagnostics engineering.
+  - **EV Telemetry & CAN Engineering:** CAN bus exploration, FSD/open CAN mods, and controlled offline bench simulation tooling.
   - **EV Geek Stats *(In Design)*:** Official Tesla Fleet Telemetry iPhone companion integrating Türkiye climate/weather data, 50 km / route-based CPO discovery, pricing/availability visibility, and navigation handoff.
-  - **Repositories:** [`PreFlight_PDI`](https://github.com/COPUR/PreFlight_PDI) · [`tesla-can-explorer-testing-only`](https://github.com/COPUR/tesla-can-explorer-testing-only)
+  - **Public Repositories:** [`tesla-can-mod`](https://github.com/COPUR/tesla-can-mod) · [`tesla-fsd-can-mod`](https://github.com/COPUR/tesla-fsd-can-mod) · [`tesla-open-can-mod`](https://github.com/COPUR/tesla-open-can-mod)
 
 ---
 
@@ -56,7 +53,7 @@ A zero-egress AI control plane that brings deterministic policy enforcement and 
 - **Jeff — Self-Hosted AI Tool-Call Firewall**
   - **Product Value:** On-premise decision layer implementing TypeSafe's `jev` System One API to inspect and gate AI coding-agent tool calls (`PreToolUse` hooks) without sending proprietary code or prompts to external paid APIs.
   - **Enterprise Controls:** Powered by `GLiFormer` (400M parameters) with local Qwen (LM Studio) escalation for uncertain classifications before human-in-the-loop fallback.
-  - **Repository:** [`jeff`](https://github.com/COPUR/jeff)
+  - **Public Repositories:** [`jeff`](https://github.com/COPUR/jeff) · [`ai-governance-framework`](https://github.com/COPUR/ai-governance-framework) · [`architecture-as-code`](https://github.com/COPUR/architecture-as-code) · [`common-cloud-controls`](https://github.com/COPUR/common-cloud-controls)
 
 - **TOGAF & Scrum Multi-Agent Delivery Framework**
   - **Product Value:** Structured agentic engineering squad modeled after enterprise architecture roles (Business, Data, Application, Technology Architects, Program Manager, Quality Engineer) with umbrella-to-vertical skill execution.
@@ -67,8 +64,7 @@ A zero-egress AI control plane that brings deterministic policy enforcement and 
 *Target: Digital Media Platforms, Event-Driven SaaS Teams*
 
 - **Multi-Tenant Serverless News & Observability Platform**
-  - **Product Value:** High-reliability, multi-tenant EV news aggregation and workflow platform built on Go/AWS Serverless with ADR-governed architecture and idempotent workflow execution, paired with local-first Node.js 20+ agents and an independently deployable dashboard microservice.
-  - **Repositories:** [`daily-ev-news-serverless-go`](https://github.com/COPUR/daily-ev-news-serverless-go) · [`daily-ev-news-agent`](https://github.com/COPUR/daily-ev-news-agent) · [`daily-news-agent`](https://github.com/COPUR/daily-news-agent) · [`dashboard-service`](https://github.com/COPUR/dashboard-service)
+  - **Product Value:** High-reliability, multi-tenant EV news aggregation and workflow platform built on Go/AWS Serverless with ADR-governed architecture and idempotent workflow execution, paired with local-first Node.js 20+ agents and an independently deployable Prisma/Docker dashboard microservice *(maintained in private repositories)*.
 
 ---
 
@@ -83,4 +79,4 @@ A zero-egress AI control plane that brings deterministic policy enforcement and 
 
 ---
 
-For detailed product specifications, deployment topologies, and technical stacks, see the [Enterprise Product Catalog](./PROJECTS.md).
+For detailed product specifications, deployment topologies, and technical stacks, see the [Enterprise Product Catalog](./PROJECTS.md) or visit the [Interactive Portfolio](https://copur.github.io/COPUR/).
