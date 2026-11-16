@@ -4,9 +4,9 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-echo "==> 1. Secret & PII hygiene check"
-if grep -rnE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|JForce|Ümit|Ayşe)' README.md PROJECTS.md docs/index.html; then
-  echo "ERROR: Potential sensitive data detected. Aborting."
+echo "==> 1. Secret, PII & excluded-metadata hygiene check"
+if grep -rnE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|JForce|Ümit|Ayşe|16\+?\s*[Yy]ears?|16-year)' README.md PROJECTS.md docs/index.html; then
+  echo "ERROR: Potential sensitive or excluded data detected. Aborting."
   exit 1
 fi
 
@@ -26,7 +26,7 @@ echo "All $(printf '%s\n' "$URLS" | wc -l | tr -d ' ') repository links verified
 echo "==> 3. Commit and push changes if any"
 git add README.md PROJECTS.md docs/index.html scripts/publish-portfolio.sh
 if ! git diff --cached --quiet; then
-  git commit -m "chore: update enterprise portfolio, GitHub Pages site, and verification script"
+  git commit -m "chore: update enterprise portfolio, Agentic AI suite, and remove experience years"
   git push origin main
 else
   echo "No new changes to commit."

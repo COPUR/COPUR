@@ -1,37 +1,57 @@
 # Ali Çopur (`@COPUR`)
 
-**Enterprise Software Architect & Product Engineering Leader · 
+**Enterprise Software Architect & Product Engineering Leader**
 
-Building **enterprise-grade software products and platforms** across **Regulated Banking & Open Finance**, **Business Process Orchestration**, **EV Roaming & Mobility**, and **On-Premise AI Governance**. Every system is engineered with contract-first governance, zero-trust security boundaries, and production-ready operability.
+Building **enterprise-grade software products and platforms** across **Agentic AI-Driven Enterprise Architecture**, **Agentic Open Finance (BaaS)**, **Regulated Core Banking & Process Orchestration**, and **EV Roaming & Mobility**. Every system is engineered with deterministic safety harnesses, contract-first governance, and zero-trust security boundaries.
 
 ---
 
 ## Enterprise Product Suites
 
-### 1. FinTechBankX — Core Banking, Open Finance & Payment Orchestration Suite
-*Target: Tier-1 Banks, Payment Service Providers (PSPs), Digital & Islamic Banks*
+### 1. Agentic AI-Driven Enterprise Architecture & Governance Suite
+*Target: Tier-1 Financial Institutions, Enterprise Architecture Boards, Regulated Engineering Organizations*
 
-An end-to-end, domain-driven banking and process orchestration product family designed for regulated financial institutions requiring strict auditability, multi-jurisdiction isolation, and zero-trust service boundaries.
+A production-oriented, zero-trust platform family that turns non-deterministic LLMs/SLMs into governed, auditable enterprise architecture and engineering capacity—built on the core paradigm **`Agent = Model + Harness` (*The Deterministic Sandwich*)**.
+
+- **Agentive Enterprise Architecture & Governed Delivery Platforms**
+  - **Product Value:** Autonomous, TOGAF ADM & BDAT-aligned multi-agent platforms (`EA-Agentive-Platform-v3`, `X_Bank-Agentive-Architecture-Framework`, `AgentiveArchitectureFW_v3`, `redbank-agentive-framework`) where five governance agents and seven domain developer agents design, validate, and scaffold core-banking microservices under regulatory policy.
+  - **Enterprise Controls:** Models emit only schema/Zod-validated JSON while deterministic Java (Spring Boot) or Node.js/TypeScript harnesses execute every side effect; DPoP-authenticated agent gateways, streaming DLP via Security SLMs, compute-aware routing (SLMs → 70B local models), `pgvector` semantic caching, W3C Trace Context observability, and compliance targeting **CBUAE 3/2025** data residency & **PCI-DSS v4** *(maintained in private enterprise repositories)*.
+
+- **Jeff — Self-Hosted AI Tool-Call Firewall**
+  - **Product Value:** On-premise decision layer implementing TypeSafe's `jev` System One API to inspect and gate AI coding-agent tool calls (`PreToolUse` hooks) without sending proprietary code or prompts to external paid APIs.
+  - **Enterprise Controls:** Powered by `GLiFormer` (400M parameters) with local Qwen (LM Studio) escalation for uncertain classifications before human-in-the-loop fallback.
+  - **Public Repository:** [`jeff`](https://github.com/COPUR/jeff)
+
+- **Architecture-as-Code, Cloud Controls & Agent Protocols**
+  - **Product Value:** Machine-readable, version-controlled enterprise architecture (`architecture-as-code`), financial AI governance frameworks (`ai-governance-framework`, `common-cloud-controls`), multi-protocol agent interoperability (`ai-agent-protocols`: Google ADK, MCP, A2A, Quarkus, LangChain4j), and automated book-to-skill synthesis (`book-to-skill` in private repos).
+  - **Public Repositories:** [`ai-governance-framework`](https://github.com/COPUR/ai-governance-framework) · [`architecture-as-code`](https://github.com/COPUR/architecture-as-code) · [`common-cloud-controls`](https://github.com/COPUR/common-cloud-controls) · [`ai-agent-protocols`](https://github.com/COPUR/ai-agent-protocols) · [`fintechbankx-governance-architecture-enablement-adr-runbooks`](https://github.com/COPUR/fintechbankx-governance-architecture-enablement-adr-runbooks)
+
+---
+
+### 2. Agentic Open Finance (BaaS) & Core Banking Orchestration Suite
+*Target: Open Finance Ecosystems, Tier-1 Banks, Payment Service Providers (PSPs), Digital & Islamic Banks*
+
+- **OPF — Agentive Open Finance (BaaS) Platform**
+  - **Product Value:** Acts as an **Agentive Translation Layer** between Open Finance / BaaS ecosystems and incumbent core-banking constraints, replacing brittle static state machines with **Temporal-orchestrated autonomous agents** (V2–V4 architecture).
+  - **Enterprise Controls:** **Model Cascades (MoE)** routing simple intents to ultra-fast SLMs before foundation models, **`pgvector` Semantic Caching** bypassing LLM inference for >80% of recurring intents, regulated architecture backlogs, and AI data controls.
+  - **Public Platform:** [`OPF-Agentive-Platform`](https://github.com/COPUR/OPF-Agentive-Platform) *(V3 & V4 regulated baselines maintained in private enterprise repositories)*
 
 - **Instant Payment Exception & BPO Orchestrator**
-  - **Product Value:** Automates mission-critical payment exception lifecycles (e.g., TR BKM FAST `pay-instant-exception`) with deterministic state transitions, human-in-the-loop escalation (Operate/Tasklist), and zero PII leakage into workflow state.
+  - **Product Value:** Automates mission-critical payment exception lifecycles (e.g., TR BKM FAST `pay-instant-exception`) on Camunda 8.10 with deterministic state transitions, human-in-the-loop escalation (Operate/Tasklist), and zero PII leakage into workflow state.
   - **Enterprise Controls:** Runtime output guardrails (`OutputVariables`) blocking monetary/PII fields from process engines, idempotent ledger capture (`x-idempotency-key`), per-provider OIDC audience isolation via Keycloak, and one-command Kubernetes/Helm deployment.
   - **Public Repositories:** [`demo-camunda-k8s`](https://github.com/COPUR/demo-camunda-k8s) · [`neo-fintechbankx-bpo-process-orchestration`](https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration) · [`camunda8-banking-poc`](https://github.com/COPUR/camunda8-banking-poc)
 
-- **Enterprise Lending, Payments & Open Finance Platform**
-  - **Product Value:** Modular banking core covering loan lifecycle management, payment orchestration, KYC/customer profile, and Open Finance APIs.
-  - **Enterprise Controls:** Multi-wave microservices governance backed by IAM (Keycloak/LDAP), Terraform IaC modules, CI/CD templates, Service Mesh security, Kafka event streaming, and centralized OpenAPI/AsyncAPI/JSON Schema catalogs.
-  - **Public Platform Modules:** [`OPF-Agentive-Platform`](https://github.com/COPUR/OPF-Agentive-Platform) · [`fintechbankx-customer-profile-kyc-core`](https://github.com/COPUR/fintechbankx-customer-profile-kyc-core) · [`fintechbankx-platform-identity-iam-keycloak-ldap`](https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap) · [`fintechbankx-platform-mesh-security-service-mesh`](https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh) · [`fintechbankx-platform-event-streaming-kafka`](https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka) · [`fintechbankx-platform-delivery-iac-terraform-modules`](https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules) *(Core lending authority & compliance modules maintained in private enterprise repositories)*
+- **FinTechBankX Core Lending, Payments & Open Finance Modules**
+  - **Product Value:** Multi-wave, domain-driven banking core covering KYC/customer profile, IAM (Keycloak/LDAP), Terraform IaC modules, CI/CD templates, Service Mesh security, Kafka event streaming, and centralized OpenAPI/AsyncAPI/Schema Registry catalogs.
+  - **Public Platform Modules:** [`fintechbankx-customer-profile-kyc-core`](https://github.com/COPUR/fintechbankx-customer-profile-kyc-core) · [`fintechbankx-platform-identity-iam-keycloak-ldap`](https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap) · [`fintechbankx-platform-mesh-security-service-mesh`](https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh) · [`fintechbankx-platform-event-streaming-kafka`](https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka) · [`fintechbankx-platform-delivery-iac-terraform-modules`](https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules) · [`fintechbankx-governance-api-contracts-openapi-catalog`](https://github.com/COPUR/fintechbankx-governance-api-contracts-openapi-catalog) · [`fintechbankx-governance-api-contracts-asyncapi-catalog`](https://github.com/COPUR/fintechbankx-governance-api-contracts-asyncapi-catalog) · [`fintechbankx-governance-api-contracts-schema-registry`](https://github.com/COPUR/fintechbankx-governance-api-contracts-schema-registry)
 
 - **MasruFi — Sharia-Compliant Digital Finance Engine**
   - **Product Value:** Production-oriented domain engine implementing Islamic finance instruments (Istisna, Ijarah, Qard Hassan) alongside crypto-banking primitives using strict DDD and Hexagonal Architecture.
 
 ---
 
-### 2. EV Mobility — Plug & Charge Consent & Telemetry Product Suite
+### 3. EV Mobility — Plug & Charge Consent & Telemetry Product Suite
 *Target: Charge Point Operators (CPOs), eMSPs, Automotive & EV Ecosystem Platforms*
-
-A contract-first mobility platform enabling compliant EV roaming consent management, OCPI integration, telemetry, and safe vehicle diagnostics engineering.
 
 - **EV PnC Consent & Roaming Governance Platform**
   - **Product Value:** Neutral, centralized Plug & Charge (PnC) roaming consent registry managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, and multi-tenancy—paired with OCPI eMSP adapters, hub gateway, telemetry, simulator, and revocation propagation workers.
@@ -39,24 +59,8 @@ A contract-first mobility platform enabling compliant EV roaming consent managem
   - **Public Repositories:** [`EV_PnC_Consent_contracts`](https://github.com/COPUR/EV_PnC_Consent_contracts) · [`EV_PnC_Consent_registry`](https://github.com/COPUR/EV_PnC_Consent_registry) · [`EV_PnC_Consent_decision`](https://github.com/COPUR/EV_PnC_Consent_decision) · [`EV_PnC_Consent_testkit`](https://github.com/COPUR/EV_PnC_Consent_testkit) · [`EV_PNC_hub-gateway`](https://github.com/COPUR/EV_PNC_hub-gateway) · [`EV_PNC_ocpi-emsp`](https://github.com/COPUR/EV_PNC_ocpi-emsp) · [`EV_PNC_telemetry`](https://github.com/COPUR/EV_PNC_telemetry) · [`EV_PNC_simulator`](https://github.com/COPUR/EV_PNC_simulator)
 
 - **Driver Experience & Automotive Verification Products**
-  - **EV Telemetry & CAN Engineering:** CAN bus exploration, FSD/open CAN mods, and controlled offline bench simulation tooling.
-  - **EV Geek Stats *(In Design)*:** Official Tesla Fleet Telemetry iPhone companion integrating Türkiye climate/weather data, 50 km / route-based CPO discovery, pricing/availability visibility, and navigation handoff.
+  - **EV Telemetry & CAN Engineering:** CAN bus exploration, FSD/open CAN mods, controlled offline bench simulation, Pre-Delivery Inspection (`PreFlight_PDI`), and Tesla Fleet Telemetry route/charging companion (*EV Geek Stats*).
   - **Public Repositories:** [`tesla-can-mod`](https://github.com/COPUR/tesla-can-mod) · [`tesla-fsd-can-mod`](https://github.com/COPUR/tesla-fsd-can-mod) · [`tesla-open-can-mod`](https://github.com/COPUR/tesla-open-can-mod)
-
----
-
-### 3. On-Prem AI Governance & Agentic Engineering Platform
-*Target: Security-Sensitive Engineering Teams, Regulated Enterprises Adopting AI Coding Agents*
-
-A zero-egress AI control plane that brings deterministic policy enforcement and structured enterprise architecture governance to autonomous coding agents.
-
-- **Jeff — Self-Hosted AI Tool-Call Firewall**
-  - **Product Value:** On-premise decision layer implementing TypeSafe's `jev` System One API to inspect and gate AI coding-agent tool calls (`PreToolUse` hooks) without sending proprietary code or prompts to external paid APIs.
-  - **Enterprise Controls:** Powered by `GLiFormer` (400M parameters) with local Qwen (LM Studio) escalation for uncertain classifications before human-in-the-loop fallback.
-  - **Public Repositories:** [`jeff`](https://github.com/COPUR/jeff) · [`ai-governance-framework`](https://github.com/COPUR/ai-governance-framework) · [`architecture-as-code`](https://github.com/COPUR/architecture-as-code) · [`common-cloud-controls`](https://github.com/COPUR/common-cloud-controls)
-
-- **TOGAF & Scrum Multi-Agent Delivery Framework**
-  - **Product Value:** Structured agentic engineering squad modeled after enterprise architecture roles (Business, Data, Application, Technology Architects, Program Manager, Quality Engineer) with umbrella-to-vertical skill execution.
 
 ---
 
@@ -72,10 +76,10 @@ A zero-egress AI control plane that brings deterministic policy enforcement and 
 
 | Pillar | Implementation Standard |
 |---|---|
+| **Deterministic Sandwich** | `Agent = Model + Harness` — LLMs produce schema-validated JSON only; deterministic code executes all side effects |
 | **Contract-First Governance** | Single-source OpenAPI, AsyncAPI, and JSON Schema registries with consumer-driven contract tests |
-| **Zero-Trust Security** | Per-provider OIDC audience scoping, restricted Kubernetes Pod Security, default-deny `NetworkPolicy`, HTTPS/JWT |
-| **Resilience & Correctness** | Hexagonal ports/adapters, idempotent pivot steps, runtime PII/payload guardrails, deterministic error mapping |
-| **Air-Gapped / On-Prem AI** | Local SLM/LLM policy gating (`GLiFormer` + local Qwen) with zero external data egress |
+| **Zero-Trust & Residency** | Per-provider OIDC/DPoP scoping, restricted K8s Pod Security, default-deny `NetworkPolicy`, CBUAE/PCI-DSS v4 alignment |
+| **Air-Gapped / On-Prem AI** | Local SLM/LLM inference & policy gating (`GLiFormer`, local Qwen, `pgvector` semantic caching) with zero external egress |
 
 ---
 
