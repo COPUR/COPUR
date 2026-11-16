@@ -1,6 +1,6 @@
 # Ali Çopur (`@COPUR`)
 
-**Enterprise Software Architect & Product Engineering Leader · 16+ Years Experience**
+**Enterprise Software Architect & Product Engineering Leader · 
 
 Building **enterprise-grade software products and platforms** across **Regulated Banking & Open Finance**, **Business Process Orchestration**, **EV Roaming & Mobility**, and **On-Premise AI Governance**. Every system is engineered with contract-first governance, zero-trust security boundaries, and production-ready operability.
 
