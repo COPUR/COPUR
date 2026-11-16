@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
 echo "==> 1. Secret, PII & excluded-metadata hygiene check"
-if grep -rnE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|JForce|Ümit|Ayşe|16\+?\s*[Yy]ears?|16-year)' README.md PROJECTS.md docs/index.html; then
+if grep -rniE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|JForce|Ümit|Ayşe|16\+?\s*Years?|16-year|steerf[0o]cus)' README.md PROJECTS.md docs/index.html; then
   echo "ERROR: Potential sensitive or excluded data detected. Aborting."
   exit 1
 fi

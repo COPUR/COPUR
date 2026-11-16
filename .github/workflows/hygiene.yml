@@ -1,0 +1,20 @@
+name: Portfolio & Secret Hygiene
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for secrets, PII, and excluded metadata
+        run: |
+          if grep -rniE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|JForce|Ümit|Ayşe|16\+?\s*Years?|16-year|steerf[0o]cus)' README.md PROJECTS.md docs/index.html; then
+            echo "Hygiene check failed."
+            exit 1
+          fi
+          echo "Hygiene check passed."
