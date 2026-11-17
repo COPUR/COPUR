@@ -1,20 +1,88 @@
-name: Portfolio & Secret Hygiene
+name: Portfolio Contract, Hygiene & Visibility Verification
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      verify_github:
+        description: 'Run live GitHub visibility verification job'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  hygiene:
+  validate-and-test:
+    name: Schema, Invariants, Parity & Hygiene
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - name: Check for secrets, PII, and excluded metadata
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Python (stdlib runtime)
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify SSOT schema, VAL invariants, hygiene policy, and byte-exact parity
+        run: python3 scripts/build-portfolio.py --check --offline --strict-hygiene
+
+      - name: Run unit, contract, and architecture test suite
+        run: python3 -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Write job summary
+        if: always()
         run: |
-          if grep -rniE '(AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|gho_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|JForce|Ümit|Ayşe|16\+?\s*Years?|16-year|steerf[0o]cus)' README.md PROJECTS.md docs/index.html; then
-            echo "Hygiene check failed."
-            exit 1
+          {
+            echo "### Portfolio Validation & Test Gate"
+            echo "- Parity, schema, invariants & single-source HygieneScanner: completed"
+            echo "- Unit & architecture test suite: completed"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  verify-github:
+    name: Live GitHub Visibility Verification
+    needs: [validate-and-test]
+    if: >
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && inputs.verify_github != false) ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Python (stdlib runtime)
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify live repository visibilities via paginated API
+        env:
+          GH_TOKEN: ${{ secrets.PORTFOLIO_VERIFY_PAT || github.token }}
+          HAS_VERIFY_PAT: ${{ secrets.PORTFOLIO_VERIFY_PAT != '' }}
+        run: |
+          ARGS=(--check --verify-github --strict-hygiene)
+          if [[ "$HAS_VERIFY_PAT" == "true" ]]; then
+            ARGS+=(--strict-verification)
+            echo "::notice::Running strict GitHub verification (PUBLIC + PRIVATE) with PORTFOLIO_VERIFY_PAT."
+          else
+            echo "::notice::PORTFOLIO_VERIFY_PAT not configured; verifying PUBLIC visibility and PRIVATE non-exposure via repo-scoped GITHUB_TOKEN."
           fi
-          echo "Hygiene check passed."
+          python3 scripts/build-portfolio.py "${ARGS[@]}"
