@@ -83,4 +83,4 @@ A production-oriented, zero-trust platform family that turns non-deterministic L
 
 ---
 
-For detailed product specifications, deployment topologies, and technical stacks, see the [Enterprise Product Catalog](./PROJECTS.md) or visit the [Interactive Portfolio](https://copur.github.io/COPUR/).
+For detailed product specifications, deployment topologies, and technical stacks, see the [Enterprise Product Catalog](./PROJECTS.md) or visit the [Interactive Portfolio](https://copur.github.io/).
