@@ -50,13 +50,17 @@ A production-oriented, zero-trust platform family that turns non-deterministic L
 
 ---
 
-### 3. EV Mobility — Plug & Charge Consent & Telemetry Product Suite
-*Target: Charge Point Operators (CPOs), eMSPs, Automotive & EV Ecosystem Platforms*
+### 3. EV Mobility — Consent Authority, Wallet & Telemetry Product Suites
+*Two independent, separately sponsored EV Plug & Charge (PnC) initiatives plus automotive telemetry*
 
-- **EV PnC Consent & Roaming Governance Platform**
-  - **Product Value:** Neutral, centralized Plug & Charge (PnC) roaming consent registry managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, and multi-tenancy—paired with OCPI eMSP adapters, hub gateway, telemetry, simulator, and revocation propagation workers.
+- **Consent EV PnC — Centralized Regulator Consent Authority** *(Sponsor: Government / Centralized Regulator)*
+  - **Product Value:** Neutral, regulator-sponsored Plug & Charge consent registry managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, decisioning, and cross-ecosystem revocation propagation.
   - **Enterprise Controls:** Dedicated contracts repository as the single source of truth (OpenAPI, AsyncAPI, JSON Schema), automated SDK generation, and consumer-driven contract verification.
-  - **Public Repositories:** [`EV_PnC_Consent_contracts`](https://github.com/COPUR/EV_PnC_Consent_contracts) · [`EV_PnC_Consent_registry`](https://github.com/COPUR/EV_PnC_Consent_registry) · [`EV_PnC_Consent_decision`](https://github.com/COPUR/EV_PnC_Consent_decision) · [`EV_PnC_Consent_testkit`](https://github.com/COPUR/EV_PnC_Consent_testkit) · [`EV_PNC_hub-gateway`](https://github.com/COPUR/EV_PNC_hub-gateway) · [`EV_PNC_ocpi-emsp`](https://github.com/COPUR/EV_PNC_ocpi-emsp) · [`EV_PNC_telemetry`](https://github.com/COPUR/EV_PNC_telemetry) · [`EV_PNC_simulator`](https://github.com/COPUR/EV_PNC_simulator)
+  - **Public Repositories:** [`EV_PnC_Consent_contracts`](https://github.com/COPUR/EV_PnC_Consent_contracts) · [`EV_PnC_Consent_registry`](https://github.com/COPUR/EV_PnC_Consent_registry) · [`EV_PnC_Consent_decision`](https://github.com/COPUR/EV_PnC_Consent_decision) · [`EV_PnC_Consent_testkit`](https://github.com/COPUR/EV_PnC_Consent_testkit) · [`EV_PnC_Consent_docs`](https://github.com/COPUR/EV_PnC_Consent_docs)
+
+- **Wallet PnC EV — Fintech & CPO Wallet + Loyalty Platform** *(Sponsor: Fintechs / Charge Point Operators / eMSPs)*
+  - **Product Value:** Stakeholder-sponsored Plug & Charge wallet platform enabling any Fintech or Charge Point Operator (CPO) to operate their own branded EV wallet with loyalty solutions, OCPI eMSP roaming adapters, hub gateway, telemetry, and pilot analytics.
+  - **Public Repositories:** [`EV_PNC_hub-gateway`](https://github.com/COPUR/EV_PNC_hub-gateway) · [`EV_PNC_hub-contracts`](https://github.com/COPUR/EV_PNC_hub-contracts) · [`EV_PNC_ocpi-emsp`](https://github.com/COPUR/EV_PNC_ocpi-emsp) · [`EV_PNC_ocpi-model`](https://github.com/COPUR/EV_PNC_ocpi-model) · [`EV_PNC_telemetry`](https://github.com/COPUR/EV_PNC_telemetry) · [`EV_PNC_pilot-analytics`](https://github.com/COPUR/EV_PNC_pilot-analytics) · [`EV_PNC_simulator`](https://github.com/COPUR/EV_PNC_simulator) · [`EV_PNC_infra-modules`](https://github.com/COPUR/EV_PNC_infra-modules)
 
 - **Driver Experience & Automotive Verification Products**
   - **EV Telemetry & CAN Engineering:** CAN bus exploration, FSD/open CAN mods, controlled offline bench simulation, Pre-Delivery Inspection (`PreFlight_PDI`), and Tesla Fleet Telemetry route/charging companion (*EV Geek Stats*).
