@@ -264,7 +264,15 @@ if [[ "$BUILT" != true ]]; then
 fi
 
 echo "==> 8. Live endpoint smoke check"
-if ! curl -fsSL "https://copur.github.io/" | grep -qi "COPUR"; then
+SMOKE_OK=false
+for attempt in $(seq 1 5); do
+  if curl -fsSL "https://copur.github.io/" | grep -qi "10 Canonical Suites"; then
+    SMOKE_OK=true
+    break
+  fi
+  sleep 3
+done
+if [[ "$SMOKE_OK" != true ]]; then
   echo "ERROR: Live smoke check failed on https://copur.github.io/." >&2
   exit 4
 fi
