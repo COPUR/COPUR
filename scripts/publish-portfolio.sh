@@ -266,7 +266,8 @@ fi
 echo "==> 8. Live endpoint smoke check"
 SMOKE_OK=false
 for attempt in $(seq 1 5); do
-  if curl -fsSL "https://copur.github.io/" | grep -qi "10 Canonical Suites"; then
+  BODY="$(curl -fsSL "https://copur.github.io/" 2>/dev/null || true)"
+  if grep -qi "10 Canonical Suites" <<<"$BODY"; then
     SMOKE_OK=true
     break
   fi
